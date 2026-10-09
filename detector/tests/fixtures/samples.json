@@ -1,0 +1,28 @@
+[
+  {
+    "id": "ai-1",
+    "author": "Synthetic AI-generated regression sample",
+    "expectedOrigin": "AI",
+    "text": "Artificial intelligence has rapidly evolved into one of the most influential technologies of the modern era. Its applications extend across numerous industries, including healthcare, education, finance, transportation, and entertainment. By processing large volumes of data, AI systems can identify patterns, generate predictions, and automate complex tasks with remarkable efficiency. However, the growing adoption of artificial intelligence also introduces important concerns related to privacy, transparency, bias, and accountability. As these systems become increasingly integrated into daily life, it is essential for organizations and individuals to consider both the opportunities and the potential risks associated with their use. Ultimately, the responsible development of artificial intelligence will depend on balancing technological innovation with ethical considerations and meaningful human oversight."
+  },
+  {
+    "id": "ai-2",
+    "author": "Synthetic AI-generated regression sample",
+    "expectedOrigin": "AI",
+    "text": "In today's rapidly evolving digital landscape, artificial intelligence plays a crucial role in transforming the way individuals and organizations interact with technology. One of the primary advantages of AI is its ability to process vast amounts of information quickly and efficiently. Furthermore, AI-powered systems can improve decision-making, enhance productivity, and provide personalized experiences across a wide range of applications. Nevertheless, it is equally important to acknowledge the challenges associated with artificial intelligence, including data privacy concerns, algorithmic bias, and the potential displacement of certain jobs. Therefore, a balanced approach is necessary to ensure that AI technologies are developed and implemented responsibly."
+  },
+  {
+    "id": "austen",
+    "author": "Jane Austen, Pride and Prejudice (1813)",
+    "source": "https://www.gutenberg.org/cache/epub/1342/pg1342.txt",
+    "expectedOrigin": "Human",
+    "text": "It is a truth universally acknowledged, that a single man in possession\nof a good fortune must be in want of a wife.\n\nHowever little known the feelings or views of such a man may be on his\nfirst entering a neighbourhood, this truth is so well fixed in the minds\nof the surrounding families, that he is considered as the rightful\nproperty of some one or other of their daughters.\n\n“My dear Mr. Bennet,” said his lady to him one day, “have you heard that\nNetherfield Park is let at last?”\n\nMr. Bennet replied that he had not.\n\n“But it is,” returned she; “for Mrs. Long has just been here, and she\ntold me all about it.”\n\nMr. Bennet made no answer.\n\n“Do not you want to know who has taken it?” cried his wife, impatiently.\n\n“_You_ want to tell me, and I have no objection to hearing it.”"
+  },
+  {
+    "id": "wells",
+    "author": "H. G. Wells, The War of the Worlds (1898)",
+    "source": "https://www.gutenberg.org/cache/epub/36/pg36.txt",
+    "expectedOrigin": "Human",
+    "text": "No one would have believed in the last years of the nineteenth century\nthat this world was being watched keenly and closely by intelligences\ngreater than man’s and yet as mortal as his own; that as men busied\nthemselves about their various concerns they were scrutinised and\nstudied, perhaps almost as narrowly as a man with a microscope might\nscrutinise the transient creatures that swarm and multiply in a drop of\nwater. With infinite complacency men went to and fro over this globe\nabout their little affairs, serene in their assurance of their empire\nover matter. It is possible that the infusoria under the microscope do\nthe same. No one gave a thought to the older worlds of space as sources\nof human danger, or thought of them only to dismiss the idea of life\nupon them as impossible or improbable. It is curious to recall some of\nthe mental habits of those departed days. At most terrestrial men\nfancied there might be other men upon Mars, perhaps inferior to\nthemselves and ready to welcome a missionary enterprise. Yet across the\ngulf of space, minds that are to our minds as ours are to those of the\nbeasts that perish, intellects vast and cool and unsympathetic,\nregarded this earth with envious eyes, and slowly and surely drew their\nplans against us. And early in the twentieth century came the great\ndisillusionment.\n\nThe planet Mars, I scarcely need remind the reader, revolves about the\nsun at a mean distance of 140,000,000 miles, and the light and heat it\nreceives from the sun is barely half of that received by this world. It\nmust be, if the nebular hypothesis has any truth, older than our world;\nand long before this earth ceased to be molten, life upon its surface\nmust have begun its course."
+  }
+]

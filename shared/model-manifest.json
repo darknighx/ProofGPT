@@ -1,0 +1,13 @@
+{
+  "model": "ShantanuT01/dactyl-ai-text-detector",
+  "revision": "b62b403cb6c5c14751b5b98b474e5f662b41cef9",
+  "source": "Hugging Face model_info(files_metadata=True) for the pinned revision",
+  "files": [
+    { "name": "added_tokens.json", "size": 23, "etag": "8ee2b3623dc526b123cde0aaa401755b82299af2" },
+    { "name": "config.json", "size": 935, "etag": "aca66dfece6717ad8ae0ae24c507e5c9eecaead9" },
+    { "name": "model.safetensors", "size": 1740300340, "etag": "f0a4ce513c8fcd769cbf4be856ef69d240f37041a9a7a26def376935c96e2931" },
+    { "name": "special_tokens_map.json", "size": 286, "etag": "2c9cb07c8fdeeb5ac3ceafb170592e990b204dcd" },
+    { "name": "spm.model", "size": 2464616, "etag": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd" },
+    { "name": "tokenizer_config.json", "size": 1315, "etag": "d97990f914148256b78fc640156dbce40981c8f7" }
+  ]
+}

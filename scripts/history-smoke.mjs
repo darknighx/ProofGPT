@@ -1,0 +1,94 @@
+import { _electron as electron } from 'playwright';
+import assert from 'node:assert/strict';
+import { readFile, mkdir } from 'node:fs/promises';
+import path from 'node:path';
+import { createTestProfile } from './test-profile.mjs';
+
+const samples = JSON.parse(await readFile('detector/tests/fixtures/samples.json', 'utf8'));
+const profile = await createTestProfile('history');
+const env = { ...process.env, HF_HUB_OFFLINE: '1' };
+delete env.ELECTRON_RUN_AS_NODE; delete env.PROOFGPT_DEV_URL;
+const launch = () => electron.launch({ args: ['.', `--user-data-dir=${profile}`], env });
+let app;
+const errors = [];
+try {
+  app = await launch();
+  assert.equal(await app.evaluate(({ app }) => app.getPath('userData')), profile);
+  let page = await app.firstWindow();
+  page.setDefaultTimeout(180000);
+  page.on('pageerror', (error) => errors.push(error.message));
+  await page.getByRole('button', { name: 'History', exact: true }).click();
+  await page.getByRole('heading', { name: 'No analyses yet' }).waitFor();
+  assert.equal(await page.locator('[aria-current="page"]').innerText(), 'History');
+  assert.equal(await page.getByTestId('total-scans').innerText(), '0');
+  await mkdir('artifacts', { recursive: true });
+  await page.screenshot({ path: 'artifacts/history-empty.png' });
+  await page.getByRole('button', { name: 'Analyze Text', exact: true }).click();
+  assert.equal(await page.locator('[aria-current="page"]').innerText(), 'Home');
+  const scores = [];
+  for (const sample of [samples[0], samples[2]]) {
+    await page.getByRole('textbox', { name: 'Text to analyze' }).fill(sample.text);
+    await page.getByRole('button', { name: 'Analyze Text', exact: true }).click();
+    await page.getByRole('heading', { name: 'Analysis result', exact: true }).waitFor();
+    scores.push(await page.getByTestId('ai-score').innerText());
+    await page.getByRole('button', { name: 'History', exact: true }).click();
+    await page.waitForFunction((count) => document.querySelectorAll('.history-row').length === count, scores.length);
+    assert.equal(await page.getByTestId('total-scans').innerText(), String(scores.length));
+    if (scores.length === 1) await page.getByRole('button', { name: 'Home', exact: true }).click();
+  }
+  assert.equal(await page.locator('.history-row').first().locator('.probability-badge').innerText(), scores[1]);
+  const stored = JSON.parse(await readFile(path.join(profile, 'history.json'), 'utf8')).records;
+  assert.equal(stored.length, 2);
+  assert.equal(stored[0].text, samples[2].text);
+  assert.equal(stored[1].text, samples[0].text);
+  assert.equal(stored[0].aiProbability + '%', scores[1]);
+  assert.equal(stored[1].aiProbability + '%', scores[0]);
+  await page.screenshot({ path: 'artifacts/history-real-records.png' });
+  const search = page.getByRole('searchbox', { name: 'Search history' });
+  await search.fill('ARTIFICIAL INTELLIGENCE');
+  assert.equal(await page.locator('.history-row').count(), 1);
+  await search.fill('not-present-in-either-sample');
+  await page.getByRole('heading', { name: 'No matching analyses' }).waitFor();
+  await page.getByRole('button', { name: 'Reset filters', exact: true }).click();
+  for (const [filter, count] of [['AI Likely (1)', 1], ['Human Likely (1)', 1], ['Mixed / Uncertain (0)', 0], ['All (2)', 2]]) {
+    await page.getByRole('button', { name: filter, exact: true }).click();
+    assert.equal(await page.locator('.history-row').count(), count);
+  }
+  await page.locator('.history-row-open').first().click();
+  assert.equal(await page.locator('.history-full-text p').innerText(), samples[2].text);
+  assert.equal(await page.locator('.history-detail').getByTestId('ai-score').innerText(), scores[1]);
+  assert.match(await page.locator('.result-note').last().innerText(), /ShantanuT01/);
+  await page.screenshot({ path: 'artifacts/history-detail.png' });
+  await page.getByRole('button', { name: 'Back to History', exact: true }).click();
+  await page.locator('.history-delete').last().click();
+  const dialog = page.getByRole('dialog');
+  await dialog.waitFor();
+  await dialog.getByRole('button', { name: 'Cancel', exact: true }).click();
+  assert.equal(await page.locator('.history-row').count(), 2);
+  await page.locator('.history-delete').last().click();
+  await dialog.getByRole('button', { name: 'Delete analysis', exact: true }).click();
+  await page.waitForFunction(() => document.querySelectorAll('.history-row').length === 1);
+  await app.close(); app = undefined;
+  // Reopen in a fresh process with no usable Python: saved details must still work.
+  env.PROOFGPT_PYTHON = 'C:/ProofGPT-test-missing/python.exe';
+  app = await launch(); page = await app.firstWindow();
+  page.on('pageerror', (error) => errors.push(error.message));
+  await page.getByRole('button', { name: 'History', exact: true }).click();
+  await page.locator('.history-row').waitFor();
+  assert.equal(await page.getByTestId('total-scans').innerText(), '1');
+  assert.equal(await page.locator('.probability-badge').innerText(), scores[1]);
+  await page.locator('.history-row-open').click();
+  assert.equal(await page.locator('.history-full-text p').innerText(), samples[2].text);
+  assert.equal(await page.locator('.history-detail').getByTestId('ai-score').innerText(), scores[1]);
+  await page.getByRole('button', { name: 'Back to History', exact: true }).click();
+  await app.evaluate(({ BrowserWindow }) => BrowserWindow.getAllWindows()[0].setSize(900, 700));
+  await page.waitForTimeout(100);
+  assert.equal(await page.locator('main[aria-label="Analysis history"]').evaluate((element) => element.scrollWidth > element.clientWidth), false);
+  await page.screenshot({ path: 'artifacts/history-compact.png' });
+  await page.getByRole('button', { name: 'Clear History', exact: true }).click();
+  await page.getByRole('dialog').getByRole('button', { name: 'Clear History', exact: true }).click();
+  await page.getByRole('heading', { name: 'No analyses yet' }).waitFor();
+  assert.deepEqual(JSON.parse(await readFile(path.join(profile, 'history.json'), 'utf8')).records, []);
+  assert.deepEqual(errors, []);
+  console.log('PASS: real offline analyses, empty state, navigation, newest-first, search/all filters, stored detail, confirmed delete/cancel, restart persistence, clear, resize, no renderer errors.');
+} finally { await app?.close(); }

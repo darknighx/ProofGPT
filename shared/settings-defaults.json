@@ -1,0 +1,11 @@
+{
+  "theme": "dark",
+  "language": "en",
+  "startPage": "home",
+  "warnShortText": true,
+  "detailLevel": "standard",
+  "includeExplanations": true,
+  "saveHistory": true,
+  "defaultExportFormat": "csv",
+  "includeChartData": true
+}

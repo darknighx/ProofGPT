@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+:root { font-family: "Segoe UI", Arial, sans-serif; color: #f7f7fc; background: #080a16; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, textarea { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible { outline: 2px solid #c6afff; outline-offset: 3px; }
+.app-shell { border: 1px solid #5751a1; border-radius: 15px; background: #0e1120; }
+.title-bar { height: 52px; padding-left: 16px; background: linear-gradient(110deg,#141929,#1c233d); border-bottom: 1px solid #323651; -webkit-app-region: drag; font-size: 19px; font-weight: 500; }
+.title-logo { width: 29px; height: 31px; }
+.window-controls { -webkit-app-region: no-drag; }
+.window-controls button { width: 60px; display: grid; place-items: center; background: transparent; border: 0; color: #e2e6f9; transition: background .15s; }
+.window-controls button:hover { background: #ffffff12; }
+.window-controls .close-window:hover { background: #b63858; }
+.window-controls svg { width: 19px; height: 19px; stroke-width: 1.6; }
+.sidebar { width: 288px; border-right: 1px solid #272945; border-radius: 14px; background: linear-gradient(115deg,#111522 0%,#101320 62%,#141831 100%); box-shadow: inset -1px 0 18px #41378709; }
+.brand { padding-top: 55px; height: 287px; }
+.brand-icon { width: 108px; height: 113px; margin-bottom: 3px; }
+.brand-name { font-size: 42px; line-height: 1.2; font-weight: 700; letter-spacing: -1.5px; }
+.brand-name span { background: linear-gradient(110deg,#c77bf0,#5759ff); background-clip: text; color: transparent; }
+.brand-tagline { font-size: 12px; letter-spacing: 2.3px; color: #848ba8; margin-top: 2px; }
+.sidebar nav { padding: 0 10px; gap: 10px; }
+.sidebar-item { height: 67px; padding: 0 23px; gap: 28px; border: 1px solid transparent; border-radius: 14px; color: #b4bfe3; font-size: 23px; transition: background .15s; }
+.sidebar-item:hover { background: #7773d20b; }
+.sidebar-item.is-active { color: #fff; font-weight: 600; border-color: #7e62db1c; background: linear-gradient(110deg,#342b60,#1d2138); }
+.nav-icon { width: 32px; height: 32px; }
+.is-active .nav-icon { color: #8968ff; fill: #8968ff; filter: drop-shadow(0 0 7px #7b51ff40); }
+.nav-chevron { width: 21px; height: 21px; color: #8590c3; }
+.sidebar-item.is-active .lucide-search { fill: none; }
+.home-page { border-radius: 0 14px 14px 0; background: radial-gradient(ellipse 85% 36% at 81% -6%,#352293 0%,#171842 46%,transparent 90%),linear-gradient(125deg,#0e1120,#101422); scrollbar-width: thin; scrollbar-color: #465574 #111827; }
+.ambient-wave { top: 0; right: 0; width: 75%; height: 290px; }
+.home-content { min-height: 100%; padding: clamp(65px,12.8vh,134px) 38px 65px 48px; }
+.home-heading h1 { margin: 0; font-size: clamp(34px,5.1vw,72px); line-height: 1.16; font-weight: 700; letter-spacing: -1.6px; white-space: nowrap; }
+.home-heading h1 span { background: linear-gradient(180deg,#c190ff 5%,#986df7 60%,#7853e7); background-clip: text; color: transparent; }
+.home-heading p { margin: 14px 0 34px; font-size: clamp(20px,1.95vw,28px); line-height: 1.5; color: #abb6de; }
+.text-input-wrap { height: clamp(245px,37.8vh,440px); border: 1.5px solid #8d79ff; border-radius: 15px; background: linear-gradient(115deg,#161a2b,#15192a); box-shadow: 0 0 0 1px #6051fb32,0 8px 30px #37268620; transition: border-color .15s,box-shadow .15s; overflow: hidden; }
+.text-input-wrap:focus-within { border-color: #b7a3ff; box-shadow: 0 0 0 2px #8971ff24,0 8px 30px #37268630; }
+textarea { display: block; width: 100%; height: 100%; resize: none; border: 0; outline: 0; padding: 25px 28px 62px; color: #e0e4fa; background: transparent; font-size: 24px; line-height: 1.5; }
+textarea::placeholder { color: #a9b5df; opacity: 1; }
+.character-count { right: 26px; bottom: 21px; color: #b7c0e6; font-size: 17px; }
+.resize-detail { position: absolute; right: 4px; bottom: 4px; width: 17px; height: 17px; background: repeating-linear-gradient(135deg,transparent 0 4px,#9199bd 4px 5px); clip-path: polygon(100% 0,100% 100%,0 100%); opacity: .7; }
+.analyze-button { width: 416px; max-width: 80%; height: 84px; margin-top: 44px; flex-shrink: 0; border: 1.5px solid #bc8aff; border-radius: 19px; background: linear-gradient(110deg,#a06af8 0%,#765cff 40%,#443dff 100%); box-shadow: inset 0 0 5px #ffffff24,0 0 2px #d3a6ff,0 10px 35px #623af834; font-size: 31px; font-weight: 600; transition: filter .15s,transform .1s,box-shadow .15s; }
+.analyze-button:hover { filter: brightness(1.12); box-shadow: inset 0 0 5px #ffffff30,0 10px 40px #7444ff60; }
+.analyze-button:active { transform: translateY(2px) scale(.985); filter: brightness(.95); }
+.trust-footer { margin: 56px 27px 0; gap: 28px; color: #afbbe2; }
+.trust-footer p { margin: 0; white-space: nowrap; font-size: 20px; }
+.trust-footer p span { padding: 0 10px; }
+.trust-rule { height: 1px; flex: 1; background: #43517c; }
+.analysis-error { align-self: flex-start; color: #ffb4c4; font-size: 16px; margin: 12px 0 -12px; }
+.analyze-button:disabled { cursor: wait; opacity: .8; transform: none; filter: none; }
+.analysis-spinner { animation: analysis-spin 1s linear infinite; }
+@keyframes analysis-spin { to { transform: rotate(360deg); } }
+.analysis-result { width: 100%; margin-top: 32px; padding: 28px; border: 1px solid #63509b; border-radius: 18px; background: linear-gradient(125deg,#1a1c32,#111626); box-shadow: 0 12px 35px #080a1630; }
+.result-heading-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.analysis-result h2 { margin: 0; font-size: 25px; font-weight: 600; }
+.prototype-tag { display: inline-flex; align-items: center; gap: 7px; padding: 6px 10px; border: 1px solid #665490; border-radius: 20px; color: #c4afff; font-size: 12px; }
+.result-disclaimer { margin: 16px 0 22px; font-size: 14px; line-height: 1.65; color: #b5c0e1; }
+.result-scores { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 20px; align-items: center; }
+.result-scores > div { display: flex; flex-direction: column; gap: 5px; }
+.result-scores span { font-size: 15px; color: #b7c2e6; }
+.result-scores strong { font-size: 48px; line-height: 1.2; font-weight: 650; color: #b594ff; }
+.result-scores > div:nth-child(2) strong { color: #7ae0c1; }
+.result-verdict small { font-size: 12px; color: #9aa7ca; }
+.result-scores .classification { align-self: flex-start; border: 1px solid; border-radius: 10px; padding: 7px 12px; margin-bottom: 5px; }
+.classification.ai { color: #ff93af; background: #ef527319; border-color: #ef527355; }
+.classification.human { color: #77e7c3; background: #37c79a19; border-color: #37c79a55; }
+.classification.uncertain { color: #edca7b; background: #c7a03719; border-color: #c7a03755; }
+.result-meter { margin: 22px 0; height: 7px; border-radius: 10px; overflow: hidden; background: #315b59; }
+.result-meter span { display: block; height: 100%; background: linear-gradient(90deg,#a56ff8,#6950ff); }
+.result-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid #343951; }
+.result-stats dt { font-size: 13px; color: #aebadb; }
+.result-stats dd { margin: 4px 0 0; font-size: 22px; }
+.analysis-result h3 { font-weight: 600; margin-top: 20px; font-size: 17px; }
+.analysis-result ul { list-style: disc; padding-left: 20px; color: #b8c4e4; font-size: 14px; line-height: 1.8; margin: 12px 0; }
+.result-note { font-size: 13px; color: #98a5cc; margin: 18px 0 0; line-height: 1.6; }
+@media (max-width: 1000px) { .analysis-result { padding: 20px; } .result-scores { grid-template-columns: 1fr 1fr; } .result-verdict { grid-column: 1 / -1; } }
+@media (prefers-reduced-motion: reduce) { .analysis-spinner { animation-duration: 2s; } .analyze-button { transition: none; } }
+@media (max-width: 1150px) {
+  .sidebar { width: 235px; }
+  .sidebar-item { padding: 0 17px; gap: 23px; font-size: 20px; }
+  .brand-name { font-size: 36px; }
+  .home-content { padding-left: 32px; padding-right: 32px; }
+  .home-heading h1 { font-size: clamp(30px,4.55vw,53px); }
+  .trust-footer { gap: 15px; margin-left: 0; margin-right: 0; }
+  .trust-footer p { font-size: 16px; }
+}
+@media (max-height: 800px) {
+  .brand { height: 230px; padding-top: 30px; }
+  .brand-icon { width: 86px; height: 90px; }
+  .sidebar nav { gap: 6px; }
+  .sidebar-item { height: 54px; }
+  .home-content { padding-top: 60px; padding-bottom: 35px; }
+  .home-heading p { margin-bottom: 25px; }
+  .analyze-button { margin-top: 28px; height: 68px; font-size: 26px; }
+  .trust-footer { margin-top: 35px; }
+}

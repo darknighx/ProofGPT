@@ -1,0 +1,92 @@
+/* Help uses the reference's compact content cards within the approved shared shell. */
+.help-page { padding: 18px 30px 24px; background: radial-gradient(ellipse at 90% 0%,#1721372b,transparent 65%),#0c141f; color: #f5f7ff; scrollbar-width: thin; scrollbar-color: #465574 #111827; }
+.sidebar-item.is-active .lucide-circle-help, .sidebar-item.is-active .lucide-circle-question-mark { fill: none; }
+.help-heading { display: flex; align-items: center; justify-content: space-between; gap: 25px; min-height: 73px; margin-bottom: 24px; }
+.help-heading > div { display: flex; align-items: flex-start; gap: 24px; }
+.help-heading > div > svg { color: #7561ff; margin-top: 2px; flex-shrink: 0; stroke-width: 2.4; }
+.help-heading h1 { margin: 0; font-size: 37px; font-weight: 650; line-height: 1.3; letter-spacing: -.5px; }
+.help-heading p { margin: 5px 0 0; color: #b4caef; font-size: 15px; line-height: 1.5; }
+.help-search { display: flex; gap: 13px; align-items: center; min-width: 245px; width: 35%; max-width: 401px; height: 49px; padding: 0 13px; border: 1px solid #2c3e58; border-radius: 8px; background: #0c1520; color: #b7cef4; }
+.help-search > svg { flex-shrink: 0; }
+.help-search:focus-within { border-color: #9983ff; box-shadow: 0 0 0 2px #7962ff23; }
+.help-search input { font: inherit; font-size: 14px; min-width: 0; width: 100%; background: transparent; color: #e7eeff; border: 0; outline: 0; }
+.help-search input::placeholder { opacity: 1; color: #b5cdf3; }
+.help-search input::-webkit-search-cancel-button { display: none; }
+.help-search button { display: grid; place-items: center; background: transparent; padding: 3px; border: 0; color: #bdcbee; border-radius: 4px; }
+.help-categories { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 21px 18px; margin-bottom: 22px; }
+.help-category { display: flex; align-items: center; gap: 15px; text-align: left; min-height: 111px; padding: 17px 16px; background: linear-gradient(115deg,#121d2b,#101a26); border: 1px solid #26364d; border-radius: 10px; color: #f5f7ff; transition: border-color .15s,background .15s; }
+.help-category:hover, .help-category.is-selected { border-color: #7760ff; background: linear-gradient(115deg,#1c2447,#181e3b); box-shadow: 0 0 18px #5e43ff14; }
+.help-category-icon { display: grid; place-items: center; flex-shrink: 0; width: 63px; height: 66px; border-radius: 50%; color: #7264ff; background: linear-gradient(125deg,#1c2850,#17243b); }
+.help-category[data-category="privacy"] .help-category-icon { color: #5777ff; }
+.help-category-copy { flex: 1; min-width: 0; }
+.help-category strong { display: block; font-size: 14px; font-weight: 600; line-height: 1.45; }
+.help-category small { display: block; margin-top: 5px; font-size: 13px; color: #b4c8ef; line-height: 1.4; }
+.help-category > svg { flex-shrink: 0; color: #aec9f8; }
+.help-documentation-category .help-category-icon { color: #9467ff; background: #29203d; }
+.help-category:disabled, .help-primary:disabled { cursor: wait; opacity: .65; }
+.help-filter-status { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin: -3px 0 15px; color: #b8c9eb; font-size: 13px; }
+.help-filter-status p { margin: 0; }
+.help-filter-status button { background: transparent; border: 0; color: #bca9ff; text-decoration: underline; padding: 6px; border-radius: 4px; }
+.help-content-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.02fr); gap: 24px; align-items: start; }
+.help-panel { border: 1px solid #26364d; border-radius: 10px; background: linear-gradient(115deg,#141e2b,#101a26); overflow: hidden; }
+.help-panel h2 { margin: 0; font-size: 18px; font-weight: 600; line-height: 1.4; }
+.help-panel > header { display: flex; align-items: center; gap: 23px; padding: 20px; min-height: 85px; }
+.help-panel > header > svg { color: #7760ff; flex-shrink: 0; }
+.help-panel > header p { margin: 5px 0 0; color: #b3c8ed; font-size: 14px; line-height: 1.5; }
+.help-articles > header { border-bottom: 1px solid #203047; }
+.help-article { border-bottom: 1px solid #203047; }
+.help-article h3, .help-faq-item h3 { margin: 0; font-size: inherit; font-weight: 400; }
+.help-article-toggle { display: flex; align-items: center; gap: 14px; width: 100%; min-height: 73px; text-align: left; border: 0; color: #f4f7ff; background: transparent; padding: 8px 18px 8px 16px; }
+.help-article-toggle:hover { background: #6276b20d; }
+.help-article-icon { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; background: #1c293a; color: #aecbff; flex-shrink: 0; }
+.help-article-copy { flex: 1; min-width: 0; }
+.help-article-copy strong { font-size: 14px; font-weight: 600; display: block; line-height: 1.5; }
+.help-article-copy small { display: block; margin-top: 4px; font-size: 13px; color: #b1c7ee; line-height: 1.4; }
+.help-article-toggle > svg { color: #a8c6f5; flex-shrink: 0; }
+.help-article-toggle[aria-expanded="true"] > svg { transform: rotate(90deg); }
+.help-article-body { padding: 0 20px 10px; color: #c0ceeb; font-size: 14px; line-height: 1.7; overflow-wrap: anywhere; }
+.help-article-body p { margin: 13px 0; }
+.help-article-body ol { list-style: decimal; padding-left: 22px; margin: 10px 0 16px; }
+.help-article-body ul { list-style: disc; padding-left: 22px; margin: 12px 0; }
+.help-article-body li { margin: 7px 0; }
+.help-right-column { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.help-faqs > header { padding-bottom: 15px; }
+.help-faq-list { padding: 0 18px 8px; display: flex; flex-direction: column; gap: 4px; }
+.help-faq-item { border-radius: 7px; background: linear-gradient(115deg,#1b2737,#1a2533); }
+.help-faq-item h3 button { display: flex; align-items: center; justify-content: space-between; gap: 15px; width: 100%; min-height: 38px; padding: 8px 15px; font-size: 14px; text-align: left; color: #c3d8fb; border: 0; border-radius: 7px; background: transparent; }
+.help-faq-item h3 button:hover { background: #736aff12; }
+.help-faq-item svg { flex-shrink: 0; }
+.help-faq-item button[aria-expanded="true"] svg { transform: rotate(180deg); }
+.help-faq-answer { padding: 0 15px 12px; color: #b8c9e8; font-size: 13px; line-height: 1.7; }
+.help-faq-answer p { margin: 5px 0 0; }
+.help-view-more { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 35px; background: transparent; border: 0; color: #b8afff; font-size: 12px; padding: 8px 16px; }
+.help-view-more:hover { background: #736aff12; }
+.help-support-top { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; padding: 18px 20px; }
+.help-support-top > svg { color: #7c62ff; flex-shrink: 0; }
+.help-support-top > div { flex: 1; min-width: 150px; }
+.help-support-top p { color: #b1c8ec; font-size: 13px; line-height: 1.5; margin: 5px 0 0; }
+.help-primary { display: inline-flex; align-items: center; justify-content: center; gap: 9px; color: #fff; font-size: 13px; font-weight: 500; background: linear-gradient(110deg,#6552ff,#5242ff); border: 1px solid #7965ff; border-radius: 9px; padding: 13px 15px; box-shadow: 0 4px 16px #5035ed20; transition: filter .15s,transform .1s; }
+.help-primary:hover { filter: brightness(1.15); }
+.help-primary:active { transform: translateY(1px); }
+.help-support-details { display: grid; grid-template-columns: .94fr 1.12fr .94fr; gap: 10px; padding: 18px 20px; border-top: 1px solid #213148; }
+.help-support-details > span, .help-support-details > button { display: flex; align-items: center; gap: 12px; color: #b3caf2; font-size: 12px; line-height: 1.6; }
+.help-support-details svg { color: #adcbff; flex-shrink: 0; }
+.help-support-details > button { background: transparent; border: 0; text-align: left; border-radius: 5px; padding: 0; }
+.help-support-details > button:hover { color: #ded5ff; }
+.help-about { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; }
+.help-about > svg { color: #8874ff; flex-shrink: 0; }
+.help-about > div { flex: 1; min-width: 0; }
+.help-about h2 { font-size: 14px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 5px 15px; }
+.help-about h2 span { font-size: 12px; font-weight: 400; color: #9eb3d7; }
+.help-about p { margin: 5px 0 0; font-size: 12px; color: #aac0e2; line-height: 1.6; }
+.help-about strong { font-weight: 500; color: #c4cef1; }
+.help-section-empty { padding: 16px 20px; color: #b6c7e6; font-size: 14px; margin: 0; line-height: 1.6; }
+.help-empty { border: 1px solid #2b3a54; border-radius: 11px; padding: 45px 25px; text-align: center; background: #121c2a; }
+.help-empty > svg { color: #8d7fff; margin: auto; }
+.help-empty h2 { margin: 15px 0 8px; font-size: 22px; font-weight: 600; }
+.help-empty p { color: #b6c6e7; margin: 0 0 22px; }
+.help-error { padding: 12px 16px; color: #ffb2c5; border: 1px solid #99536c; background: #74395226; border-radius: 9px; margin: 0 0 18px; font-size: 13px; overflow-wrap: anywhere; }
+@media (max-width: 1450px) { .help-category { gap: 10px; padding: 15px 12px; } .help-category-icon { width: 52px; height: 54px; } .help-category strong { font-size: 13px; } .help-category small { font-size: 12px; } .help-support-top { gap: 12px; } .help-support-top .help-primary { margin-left: 52px; } .help-support-details { gap: 12px; padding: 16px; } .help-support-details > span, .help-support-details > button { flex-direction: column; align-items: flex-start; gap: 6px; } }
+@media (max-width: 1200px) { .help-page { padding: 28px 24px; } .help-categories { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; } .help-category { min-height: 100px; padding: 15px; gap: 15px; } .help-category-icon { width: 63px; height: 66px; } .help-category strong { font-size: 14px; } .help-category small { font-size: 13px; } .help-content-grid { grid-template-columns: minmax(0,1fr); } .help-support-top .help-primary { margin-left: 0; } .help-support-details > span, .help-support-details > button { flex-direction: row; align-items: center; } }
+@media (max-width: 950px) { .help-heading { flex-direction: column; align-items: stretch; gap: 20px; margin-bottom: 24px; } .help-search { width: 100%; max-width: none; min-width: 0; } .help-category { gap: 11px; padding: 13px; } .help-category-icon { width: 48px; height: 51px; } .help-category-icon svg { width: 29px; height: 29px; } .help-category strong { font-size: 13px; } .help-category small { font-size: 12px; } .help-support-top { flex-wrap: wrap; } .help-support-details { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .help-category, .help-primary { transition: none; } }

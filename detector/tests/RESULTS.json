@@ -1,0 +1,215 @@
+{
+  "model": "ShantanuT01/dactyl-ai-text-detector",
+  "revision": "b62b403cb6c5c14751b5b98b474e5f662b41cef9",
+  "id2label": {
+    "0": "LABEL_0"
+  },
+  "contextLength": 512,
+  "samples": [
+    {
+      "id": "ai-1",
+      "author": "Synthetic AI-generated regression sample",
+      "expectedOrigin": "AI",
+      "aiProbability": 100.0,
+      "humanProbability": 0.0,
+      "classification": "AI Likely",
+      "confidence": "High",
+      "wordCount": 116,
+      "characterCount": 915,
+      "sentenceCount": 6,
+      "chunksAnalyzed": 1,
+      "chunks": [
+        {
+          "tokenStart": 0,
+          "tokenEnd": 136,
+          "startCharacter": 0,
+          "endCharacter": 915,
+          "tokenCount": 136,
+          "aiProbability": 99.99922513961792
+        }
+      ],
+      "modelName": "ShantanuT01/dactyl-ai-text-detector",
+      "modelRevision": "b62b403cb6c5c14751b5b98b474e5f662b41cef9",
+      "detectorVersion": "dactyl-ml-v1",
+      "observations": [
+        "The pretrained classifier analyzed 1 text chunk, covering all 136 content tokens.",
+        "The document score is the token-weighted average of the model's chunk scores; no writing-style rules change it.",
+        "The model assigned this text an AI score of 100.00%.",
+        "Confidence describes the decisiveness and consistency of model output, not certainty about the author."
+      ],
+      "inferenceDurationMs": 952
+    },
+    {
+      "id": "ai-2",
+      "author": "Synthetic AI-generated regression sample",
+      "expectedOrigin": "AI",
+      "aiProbability": 100.0,
+      "humanProbability": 0.0,
+      "classification": "AI Likely",
+      "confidence": "High",
+      "wordCount": 103,
+      "characterCount": 769,
+      "sentenceCount": 5,
+      "chunksAnalyzed": 1,
+      "chunks": [
+        {
+          "tokenStart": 0,
+          "tokenEnd": 121,
+          "startCharacter": 0,
+          "endCharacter": 769,
+          "tokenCount": 121,
+          "aiProbability": 99.9995231628418
+        }
+      ],
+      "modelName": "ShantanuT01/dactyl-ai-text-detector",
+      "modelRevision": "b62b403cb6c5c14751b5b98b474e5f662b41cef9",
+      "detectorVersion": "dactyl-ml-v1",
+      "observations": [
+        "The pretrained classifier analyzed 1 text chunk, covering all 121 content tokens.",
+        "The document score is the token-weighted average of the model's chunk scores; no writing-style rules change it.",
+        "The model assigned this text an AI score of 100.00%.",
+        "Confidence describes the decisiveness and consistency of model output, not certainty about the author."
+      ],
+      "inferenceDurationMs": 751
+    },
+    {
+      "id": "austen",
+      "author": "Jane Austen, Pride and Prejudice (1813)",
+      "source": "https://www.gutenberg.org/cache/epub/1342/pg1342.txt",
+      "expectedOrigin": "Human",
+      "aiProbability": 0.01,
+      "humanProbability": 99.99,
+      "classification": "Human Likely",
+      "confidence": "High",
+      "wordCount": 150,
+      "characterCount": 784,
+      "sentenceCount": 12,
+      "chunksAnalyzed": 1,
+      "chunks": [
+        {
+          "tokenStart": 0,
+          "tokenEnd": 188,
+          "startCharacter": 0,
+          "endCharacter": 784,
+          "tokenCount": 188,
+          "aiProbability": 0.0065129948779940605
+        }
+      ],
+      "modelName": "ShantanuT01/dactyl-ai-text-detector",
+      "modelRevision": "b62b403cb6c5c14751b5b98b474e5f662b41cef9",
+      "detectorVersion": "dactyl-ml-v1",
+      "observations": [
+        "The pretrained classifier analyzed 1 text chunk, covering all 188 content tokens.",
+        "The document score is the token-weighted average of the model's chunk scores; no writing-style rules change it.",
+        "The model assigned this text an AI score of 0.01%.",
+        "Confidence describes the decisiveness and consistency of model output, not certainty about the author."
+      ],
+      "inferenceDurationMs": 923
+    },
+    {
+      "id": "wells",
+      "author": "H. G. Wells, The War of the Worlds (1898)",
+      "source": "https://www.gutenberg.org/cache/epub/36/pg36.txt",
+      "expectedOrigin": "Human",
+      "aiProbability": 0.0,
+      "humanProbability": 100.0,
+      "classification": "Human Likely",
+      "confidence": "High",
+      "wordCount": 304,
+      "characterCount": 1716,
+      "sentenceCount": 10,
+      "chunksAnalyzed": 1,
+      "chunks": [
+        {
+          "tokenStart": 0,
+          "tokenEnd": 341,
+          "startCharacter": 0,
+          "endCharacter": 1716,
+          "tokenCount": 341,
+          "aiProbability": 0.00048091396820382215
+        }
+      ],
+      "modelName": "ShantanuT01/dactyl-ai-text-detector",
+      "modelRevision": "b62b403cb6c5c14751b5b98b474e5f662b41cef9",
+      "detectorVersion": "dactyl-ml-v1",
+      "observations": [
+        "The pretrained classifier analyzed 1 text chunk, covering all 341 content tokens.",
+        "The document score is the token-weighted average of the model's chunk scores; no writing-style rules change it.",
+        "The model assigned this text an AI score of 0.00%.",
+        "Confidence describes the decisiveness and consistency of model output, not certainty about the author."
+      ],
+      "inferenceDurationMs": 1655
+    }
+  ],
+  "repeatIdentical": true,
+  "longDocument": {
+    "aiProbability": 17.07,
+    "humanProbability": 82.93,
+    "classification": "Human Likely",
+    "confidence": "Moderate",
+    "wordCount": 2376,
+    "characterCount": 15000,
+    "sentenceCount": 92,
+    "chunksAnalyzed": 6,
+    "chunks": [
+      {
+        "tokenStart": 0,
+        "tokenEnd": 477,
+        "startCharacter": 0,
+        "endCharacter": 2634,
+        "tokenCount": 477,
+        "aiProbability": 15.029573440551758
+      },
+      {
+        "tokenStart": 477,
+        "tokenEnd": 954,
+        "startCharacter": 2634,
+        "endCharacter": 5269,
+        "tokenCount": 477,
+        "aiProbability": 15.029573440551758
+      },
+      {
+        "tokenStart": 954,
+        "tokenEnd": 1431,
+        "startCharacter": 5269,
+        "endCharacter": 7904,
+        "tokenCount": 477,
+        "aiProbability": 15.029573440551758
+      },
+      {
+        "tokenStart": 1431,
+        "tokenEnd": 1908,
+        "startCharacter": 7904,
+        "endCharacter": 10539,
+        "tokenCount": 477,
+        "aiProbability": 15.029573440551758
+      },
+      {
+        "tokenStart": 1908,
+        "tokenEnd": 2385,
+        "startCharacter": 10539,
+        "endCharacter": 13174,
+        "tokenCount": 477,
+        "aiProbability": 15.029573440551758
+      },
+      {
+        "tokenStart": 2385,
+        "tokenEnd": 2697,
+        "startCharacter": 13174,
+        "endCharacter": 15000,
+        "tokenCount": 312,
+        "aiProbability": 32.62697160243988
+      }
+    ],
+    "modelName": "ShantanuT01/dactyl-ai-text-detector",
+    "modelRevision": "b62b403cb6c5c14751b5b98b474e5f662b41cef9",
+    "detectorVersion": "dactyl-ml-v1",
+    "observations": [
+      "The pretrained classifier analyzed 6 text chunks, covering all 2697 content tokens.",
+      "The document score is the token-weighted average of the model's chunk scores; no writing-style rules change it.",
+      "Chunk AI scores range from 15.03% to 32.63%.",
+      "Confidence describes the decisiveness and consistency of model output, not certainty about the author."
+    ],
+    "inferenceDurationMs": 13215
+  }
+}

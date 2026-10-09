@@ -1,0 +1,67 @@
+{
+  "name": "proofgpt",
+  "productName": "ProofGPT",
+  "description": "Windows desktop application for probabilistic AI text detection with local ML inference, history and reports.",
+  "author": { "name": "ProofGPT" },
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darknighx/ProofGPT.git"
+  },
+  "homepage": "https://github.com/darknighx/ProofGPT#readme",
+  "bugs": {
+    "url": "https://github.com/darknighx/ProofGPT/issues"
+  },
+  "private": true,
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "tsc --noEmit && vite build",
+    "build:detector": "node scripts/build-detector.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint electron scripts electron-builder.config.cjs eslint.config.mjs",
+    "check:syntax": "node scripts/check-syntax.mjs",
+    "check:package": "node scripts/check-package.mjs",
+    "pack:win": "node scripts/package-win.mjs --dir",
+    "dist:win": "node scripts/package-win.mjs",
+    "test:release": "node scripts/release-smoke.mjs",
+    "test:model-download": "node scripts/model-download-smoke.mjs",
+    "start": "electron .",
+    "test:smoke": "node scripts/smoke.mjs",
+    "test:detector": "node --experimental-strip-types scripts/detector-smoke.mjs",
+    "test:history": "node scripts/history-store-check.cjs && node scripts/history-smoke.mjs",
+    "test:reports": "node --experimental-strip-types scripts/report-check.mjs && node scripts/reports-smoke.mjs",
+    "test:settings": "node scripts/settings-store-check.cjs && node scripts/settings-smoke.mjs",
+    "test:help": "node --experimental-strip-types scripts/help-check.mjs && node scripts/help-smoke.mjs",
+    "test": "node scripts/run-checks.mjs"
+  },
+  "overrides": {
+    "app-builder-lib": {
+      "@electron/get": "5.1.0"
+    }
+  },
+  "engines": {
+    "node": "^22.13.0 || >=24.0.0"
+  },
+  "dependencies": {
+    "lucide-react": "^0.577.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@tailwindcss/vite": "^4.2.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "electron": "^41.0.0",
+    "electron-builder": "26.15.3",
+    "eslint": "^10.12.0",
+    "globals": "^16.5.0",
+    "playwright": "^1.58.0",
+    "tailwindcss": "^4.2.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.3.0"
+  }
+}
